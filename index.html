@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Benchmark Leaderboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>🏆 Benchmark Leaderboard</h1>
+
+<input type="text" id="search" placeholder="Search model or organization">
+
+<table id="leaderboard">
+<thead>
+<tr>
+<th onclick="sortTable('rank')">Rank</th>
+<th onclick="sortTable('model')">Model</th>
+<th onclick="sortTable('org')">Organization</th>
+<th onclick="sortTable('score')">Score</th>
+<th>Date</th>
+<th>Code</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+</table>
+
+<script src="script.js"></script>
+
+</body>
+</html>
