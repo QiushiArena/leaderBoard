@@ -2,49 +2,56 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>AI Detector Benchmark Leaderboard</title>
+    <title>AI Detector Benchmark</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="header-container">
-        <img src="photo/logo.png" alt="Logo" class="logo">
-        <h1>🏆 AI Detector Benchmark</h1>
-    </div>
+    <header class="page-header">
+        <h1>🏆 AI Detector Benchmark Leaderboard</h1>
+        <img src="photo/logo.png" alt="Project Logo" class="centered-logo">
+    </header>
 
-    <div class="description-section">
-        <p>欢迎来到 <strong>AI Detector Benchmark</strong>。本项目旨在评估当前最前沿的 AI 生成文本检测器在不同数据集（如 Wiki, Arxiv）上的表现。</p>
-        <ul>
-            <li><strong>AUC:</strong> 衡量模型区分真伪文本的综合能力。</li>
-            <li><strong>F1 Score:</strong> 查准率与查全率的调和平均数。</li>
-        </ul>
-        <p>想要添加你的模型？请提交 Pull Request 或查看底部的代码仓库。</p>
-    </div>
+    <div class="main-container">
+        <aside class="left-panel">
+            <h2>关于项目</h2>
+            <p>这是一个专门用于评估 AI 文本检测器性能的开源基准平台。我们通过对不同领域的文本进行测试，提供公正、透明的数据参考。</p>
+            
+            <h3>指标说明</h3>
+            <ul>
+                <li><strong>AUC:</strong> 衡量模型区分机器生成与人类撰写文本的整体稳健性。</li>
+                <li><strong>F1 Score:</strong> 综合考虑精确率和召回率的平衡指标。</li>
+            </ul>
 
-    <div class="controls">
-        <input type="text" id="search" placeholder="搜索模型或组织..." oninput="filterData()">
-        <select id="datasetFilter" onchange="filterData()">
-            <option value="all">所有数据集</option>
-            <option value="Wiki">Wiki</option>
-            <option value="Arxiv">Arxiv</option>
-        </select>
-    </div>
+            <h3>提交申请</h3>
+            <p>如果您希望您的模型出现在排行榜中，请通过 GitHub 提交 Pull Request。</p>
+        </aside>
 
-    <table id="leaderboard">
-        <thead>
-            <tr>
-                <th>排名</th>
-                <th onclick="sortTable('detector')">检测器</th>
-                <th onclick="sortTable('organization')">组织</th>
-                <th onclick="sortTable('AUC')">AUC ▽</th>
-                <th onclick="sortTable('F1')">F1 ▽</th>
-                <th>数据集</th>
-                <th>论文</th>
-                <th>代码</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+        <section class="right-panel">
+            <div class="controls">
+                <input type="text" id="search" placeholder="搜索模型或组织..." oninput="filterData()">
+                <select id="datasetFilter" onchange="filterData()">
+                    <option value="all">所有数据集</option>
+                    <option value="Wiki">Wiki</option>
+                    <option value="Arxiv">Arxiv</option>
+                </select>
+            </div>
+
+            <table id="leaderboard">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th onclick="sortTable('detector')">检测器</th>
+                        <th onclick="sortTable('organization')">组织</th>
+                        <th onclick="sortTable('AUC')">AUC</th>
+                        <th onclick="sortTable('F1')">F1</th>
+                        <th>数据集</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>
