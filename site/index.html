@@ -19,8 +19,10 @@
 
             <h3>Metric Explanation</h3>
             <ul>
-                <li><strong>AUC:</strong> Measures the overall robustness of the model in distinguishing between machine-generated and human-written texts.</li>
-                <li><strong>F1 Score:</strong> A balanced measure of precision and recall.</li>
+                <li><strong>Score Mix:</strong> Weighted score across mix difficulty levels (0.2~0.8).</li>
+                <li><strong>Score Iter:</strong> Weighted score across iteration levels (rewrite 4~16).</li>
+                <li><strong>Score Rub:</strong> Robustness score based on performance stability.</li>
+                <li><strong>Final Score:</strong> 0.5 * mix + 0.3 * iter + 0.2 * rub</li>
             </ul>
 
             <h3>Submission</h3>
@@ -30,14 +32,7 @@
 
         <section class="right-panel">
             <div class="controls">
-                <input type="text" id="search" placeholder="Search models or organizations..." oninput="filterData()">
-                <select id="datasetFilter" onchange="filterData()">
-                    <option value="all">All Datasets</option>
-                    <option value="Arxiv">Arxiv</option>
-                    <option value="Xsum">Xsum</option>
-                    <option value="Yelp">Yelp</option>
-                    <option value="WritingPrompts">WritingPrompts</option>
-                </select>
+                <input type="text" id="search" placeholder="Search detectors..." oninput="filterData()">
             </div>
 
             <table id="leaderboard">
@@ -45,10 +40,10 @@
                     <tr>
                         <th>#</th>
                         <th onclick="sortTable('detector')">Detector</th>
-                        <th onclick="sortTable('organization')">Organization</th>
-                        <th onclick="sortTable('AUC')">AUC</th>
-                        <th onclick="sortTable('F1')">F1</th>
-                        <th>Dataset</th>
+                        <th onclick="sortTable('scoreMix')">Score Mix</th>
+                        <th onclick="sortTable('scoreIter')">Score Iter</th>
+                        <th onclick="sortTable('scoreRub')">Score Rub</th>
+                        <th onclick="sortTable('finalScore')">Final Score</th>
                     </tr>
                 </thead>
                 <tbody></tbody>

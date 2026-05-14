@@ -1,46 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="utf-8">
 <title>Detector Benchmark Leaderboard</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <h1>Detector Benchmark</h1>
 
 <input id="search" placeholder="Search detector">
 
-<select id="datasetFilter">
-<option value="all">All datasets</option>
-<option value="Wiki">Wiki</option>
-<option value="Arxiv">Arxiv</option>
-</select>
-
 <table id="leaderboard">
-
 <thead>
 <tr>
-
 <th onclick="sortTable('detector')">Detector</th>
-<th onclick="sortTable('organization')">Org</th>
-<th onclick="sortTable('AUC')">AUC</th>
-<th onclick="sortTable('F1')">F1</th>
-
-<th>Dataset</th>
-<th>Paper</th>
-<th>Code</th>
-
+<th onclick="sortTable('scoreMix')">Score Mix</th>
+<th onclick="sortTable('scoreIter')">Score Iter</th>
+<th onclick="sortTable('scoreRub')">Score Rub</th>
+<th onclick="sortTable('finalScore')">Final Score</th>
 </tr>
 </thead>
-
 <tbody></tbody>
-
 </table>
 
 <script src="script.js"></script>
-
 </body>
 </html>
