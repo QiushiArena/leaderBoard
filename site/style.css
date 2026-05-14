@@ -71,10 +71,23 @@ body {
 
 #search, #datasetFilter, #sortBy {
     background: #2d2d2d;
-    color: white;
+    color: #e0e0e0;
     border: 1px solid #444;
     padding: 10px;
     border-radius: 6px;
+    font-size: 14px;
+}
+
+#sortBy {
+    background: #252525;
+    border: 1px solid #bb86fc;
+    color: #bb86fc;
+    cursor: pointer;
+}
+
+#sortBy option {
+    background: #1e1e1e;
+    color: #e0e0e0;
 }
 
 #search::placeholder {
