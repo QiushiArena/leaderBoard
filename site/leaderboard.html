@@ -11,6 +11,13 @@
 
 <input id="search" placeholder="Search detector">
 
+<select id="sortBy" onchange="sortTable(this.value)">
+    <option value="finalScore">Final Score</option>
+    <option value="scoreMix">Score Mix</option>
+    <option value="scoreIter">Score Iter</option>
+    <option value="scoreRub">Score Rub</option>
+</select>
+
 <table id="leaderboard">
 <thead>
 <tr>

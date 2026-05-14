@@ -33,6 +33,12 @@
         <section class="right-panel">
             <div class="controls">
                 <input type="text" id="search" placeholder="Search detectors..." oninput="filterData()">
+                <select id="sortBy" onchange="sortTable(this.value)">
+                    <option value="finalScore">Final Score</option>
+                    <option value="scoreMix">Score Mix</option>
+                    <option value="scoreIter">Score Iter</option>
+                    <option value="scoreRub">Score Rub</option>
+                </select>
             </div>
 
             <table id="leaderboard">

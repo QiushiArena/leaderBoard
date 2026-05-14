@@ -118,6 +118,7 @@ function filterData() {
 
 function sortTable(metric) {
     allData.sort((a, b) => b[metric] - a[metric]);
+    document.getElementById("sortBy").value = metric;
     filterData();
 }
 
